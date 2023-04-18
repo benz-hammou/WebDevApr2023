@@ -1,0 +1,27 @@
+.main-nav > .col > p:hover {
+    border-bottom: 1px solid black;
+    font-size: 10pt;
+  }
+  
+  .main-nav > .col > p {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    font-size: 10pt;
+  }
+  
+  .slider-img {
+    height: 30vh !important;
+    object-fit: cover;
+  }
+  
+  .hl-image img {
+    width: 15vh;
+  }
+  
+  .fa-gift {
+    font-size: 50pt;
+  }
+  
+  .footer-link {
+    font-size: 10pt !important;
+  }
+  

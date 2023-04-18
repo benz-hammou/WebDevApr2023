@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(41, 57, 82) !important;
+}
+
+.product-image {
+    max-height: 150px;
+    object-fit: cover;
+}

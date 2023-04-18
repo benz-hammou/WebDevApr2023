@@ -1,0 +1,25 @@
+.slogan{
+    font-size: 12pt;
+}
+
+.liHover:hover{
+ background-color: rgb(101, 175, 158) !important;
+ color: white !important;
+}
+
+.customBtn{
+    background-color: rgb(101, 175, 158) !important;
+ color: white !important;
+}
+
+.heightInfo{
+    height: 50vh;
+}
+
+.customHover:hover{
+    color: rgb(101, 175, 158) !important;
+}
+
+.footerColor{
+    background-color: lightgray;
+}

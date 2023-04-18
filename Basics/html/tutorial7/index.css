@@ -1,0 +1,55 @@
+.box {
+  width: 300px;
+  height: 300px;
+  padding: 10%;
+  position: absolute; /*  */
+}
+
+.box1 {
+  background: red;
+  z-index:4;
+}
+
+.box2 {
+  background: green;
+  left: 20px;
+  top: 20px;
+  z-index:5;
+}
+
+.box3 {
+  background: blue;
+  left: 40px;
+  top: 40px;
+}
+
+
+.box4 {
+  background: black;
+  left: 60px;
+  top: 60px;
+  z-index:-4;
+}
+
+.sticky{
+  position: fixed;
+  top: 0;
+  opacity: 1;
+  background-color: chocolate;
+  height: 100px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+p{
+  width: 300px;
+  float: left;
+}
+
+.longtext{
+  width: 200px;
+  float: right;
+  height:100px;
+  background-color: rgb(42, 118, 165);
+  color: rgb(0, 0, 0);
+}

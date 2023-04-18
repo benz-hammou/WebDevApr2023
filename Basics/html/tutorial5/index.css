@@ -1,0 +1,29 @@
+li{
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0 25px;
+    font-size: 18px;
+    position: relative
+}
+ul{
+    margin-block: 0;
+    text-align: center;
+    background: orange;
+    padding: 0px 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+li:hover{
+    color: aliceblue;
+    font-weight: bold;
+    transition: ease-in-out 0.8s;
+    transform: scale(1.4);
+}
+.container_ifram{
+    display: flex;
+    justify-content: space-around;
+}

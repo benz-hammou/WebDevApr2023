@@ -1,0 +1,74 @@
+.user {
+  background: #e20714;
+}
+.aboneer {
+  background: #ffa600;
+}
+.nav-grey {
+  background: #f2f7f8;
+}
+.logo-gva {
+  z-index: 1;
+}
+.content-navs {
+  width: 100%;
+  height: 15vh;
+}
+.text-nieuws {
+  color: #e20714 !important;
+}
+.fa-sun {
+  color: #fdc300;
+}
+
+.text-recent {
+  list-style: none;
+}
+
+.recent {
+  padding-left: 30px;
+  padding-right: 35px;
+}
+
+.gelezen {
+  padding-left: 25px;
+}
+
+.img2 {
+  padding-right: 20px;
+  width: 350px;
+}
+
+.img3 {
+  height: 220px;
+  width: 290px;
+}
+
+.fa-solid.fa-plus {
+  color: red;
+  font-size: 10px;
+}
+
+.title1,
+.title2,
+.title3 {
+  font-size: 20px;
+}
+
+.title4,
+.title5 {
+  font-size: 15px;
+}
+
+.img4 {
+  height: 110px;
+  width: 180px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.img5 {
+  height: 110px;
+  width: 180px;
+  padding-left: 20px;
+}

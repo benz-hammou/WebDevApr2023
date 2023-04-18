@@ -1,0 +1,704 @@
+{
+    "database": [
+        {
+            "id": 1,
+            "news_title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "news_desc": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+            "news_location": "Tours",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 2,
+            "news_title": "Vivamus in felis eu sapien cursus vestibulum.",
+            "news_desc": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+            "news_location": "Paprotnia",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 3,
+            "news_title": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+            "news_desc": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+            "news_location": "Port-au-Prince",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 4,
+            "news_title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "news_desc": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+            "news_location": "Pekalongan",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 5,
+            "news_title": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+            "news_desc": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+            "news_location": "Laoxingchang",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 6,
+            "news_title": "Donec semper sapien a libero.",
+            "news_desc": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+            "news_location": "Taiyang",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 7,
+            "news_title": "In eleifend quam a odio.",
+            "news_desc": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+            "news_location": "Manūjān",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 8,
+            "news_title": "Etiam justo.",
+            "news_desc": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+            "news_location": "Tála",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 9,
+            "news_title": "Vivamus in felis eu sapien cursus vestibulum.",
+            "news_desc": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+            "news_location": "Mehendiganj",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 10,
+            "news_title": "Morbi a ipsum.",
+            "news_desc": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+            "news_location": "Wanzhai",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 11,
+            "news_title": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+            "news_desc": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+            "news_location": "Oroqen Zizhiqi",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 12,
+            "news_title": "Vivamus vel nulla eget eros elementum pellentesque.",
+            "news_desc": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+            "news_location": "Xibu",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 13,
+            "news_title": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+            "news_desc": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+            "news_location": "Kwali",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 14,
+            "news_title": "Duis ac nibh.",
+            "news_desc": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+            "news_location": "Vroutek",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 15,
+            "news_title": "Vestibulum ac est lacinia nisi venenatis tristique.",
+            "news_desc": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+            "news_location": "Castle Bruce",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 16,
+            "news_title": "Ut at dolor quis odio consequat varius.",
+            "news_desc": "Fusce consequat. Nulla nisl. Nunc nisl.",
+            "news_location": "Sokółka",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 17,
+            "news_title": "Mauris ullamcorper purus sit amet nulla.",
+            "news_desc": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+            "news_location": "Azul",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 18,
+            "news_title": "Nulla mollis molestie lorem.",
+            "news_desc": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+            "news_location": "Thị Trấn Mường Khến",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 19,
+            "news_title": "In congue.",
+            "news_desc": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+            "news_location": "Huangjing",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 20,
+            "news_title": "Donec posuere metus vitae ipsum.",
+            "news_desc": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+            "news_location": "Lagayan",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 21,
+            "news_title": "Sed sagittis.",
+            "news_desc": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+            "news_location": "Łętownia",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 22,
+            "news_title": "Phasellus id sapien in sapien iaculis congue.",
+            "news_desc": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+            "news_location": "Charleville-Mézières",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 23,
+            "news_title": "Integer a nibh.",
+            "news_desc": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+            "news_location": "Brejo da Madre de Deus",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 24,
+            "news_title": "Curabitur in libero ut massa volutpat convallis.",
+            "news_desc": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+            "news_location": "Heping",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 25,
+            "news_title": "Sed sagittis.",
+            "news_desc": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+            "news_location": "Spas-Zaulok",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 26,
+            "news_title": "Morbi porttitor lorem id ligula.",
+            "news_desc": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+            "news_location": "Durham",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 27,
+            "news_title": "Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
+            "news_desc": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+            "news_location": "Oshnavīyeh",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 28,
+            "news_title": "Nullam molestie nibh in lectus.",
+            "news_desc": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+            "news_location": "Boulogne-Billancourt",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 29,
+            "news_title": "Phasellus sit amet erat.",
+            "news_desc": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+            "news_location": "Rostokino",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 30,
+            "news_title": "Suspendisse ornare consequat lectus.",
+            "news_desc": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+            "news_location": "Xinglong",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 31,
+            "news_title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "news_desc": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+            "news_location": "Graz",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 32,
+            "news_title": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+            "news_desc": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+            "news_location": "Perre",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 33,
+            "news_title": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+            "news_desc": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+            "news_location": "Carlos Casares",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 34,
+            "news_title": "Praesent blandit lacinia erat.",
+            "news_desc": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+            "news_location": "Sumberdadi",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 35,
+            "news_title": "In hac habitasse platea dictumst.",
+            "news_desc": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+            "news_location": "Ourense",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 36,
+            "news_title": "Aliquam erat volutpat.",
+            "news_desc": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
+            "news_location": "Santa Anita",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 37,
+            "news_title": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
+            "news_desc": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "news_location": "Pedro Sánchez",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 38,
+            "news_title": "Proin at turpis a pede posuere nonummy.",
+            "news_desc": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+            "news_location": "Jiangpu",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 39,
+            "news_title": "In hac habitasse platea dictumst.",
+            "news_desc": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+            "news_location": "Kedawung",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 40,
+            "news_title": "Aenean auctor gravida sem.",
+            "news_desc": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+            "news_location": "Delft",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 41,
+            "news_title": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
+            "news_desc": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+            "news_location": "Toutosa",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 42,
+            "news_title": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+            "news_desc": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+            "news_location": "San Miguel",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 43,
+            "news_title": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+            "news_desc": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+            "news_location": "Oliveirinha",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 44,
+            "news_title": "Donec ut dolor.",
+            "news_desc": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+            "news_location": "Juzhen",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 45,
+            "news_title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "news_desc": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+            "news_location": "Haoxue",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 46,
+            "news_title": "Nunc rhoncus dui vel sem.",
+            "news_desc": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+            "news_location": "Ganghwa-gun",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 47,
+            "news_title": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
+            "news_desc": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+            "news_location": "Ricardo Flores Magon",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 48,
+            "news_title": "Donec ut mauris eget massa tempor convallis.",
+            "news_desc": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+            "news_location": "Guali",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 49,
+            "news_title": "Proin risus.",
+            "news_desc": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+            "news_location": "Sujitan",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 50,
+            "news_title": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
+            "news_desc": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+            "news_location": "Várzea",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 51,
+            "news_title": "Etiam faucibus cursus urna.",
+            "news_desc": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+            "news_location": "Xinhe",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 52,
+            "news_title": "Nam dui.",
+            "news_desc": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+            "news_location": "Gaoxing",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 53,
+            "news_title": "Aliquam sit amet diam in magna bibendum imperdiet.",
+            "news_desc": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+            "news_location": "Palmeiros",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 54,
+            "news_title": "In hac habitasse platea dictumst.",
+            "news_desc": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+            "news_location": "Puyehue",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 55,
+            "news_title": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
+            "news_desc": "In congue. Etiam justo. Etiam pretium iaculis justo.",
+            "news_location": "Telheira",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 56,
+            "news_title": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+            "news_desc": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+            "news_location": "Ipoh",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 57,
+            "news_title": "Aliquam sit amet diam in magna bibendum imperdiet.",
+            "news_desc": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+            "news_location": "Dobrzeń Wielki",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 58,
+            "news_title": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+            "news_desc": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+            "news_location": "Kaiaf",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 59,
+            "news_title": "Suspendisse potenti.",
+            "news_desc": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+            "news_location": "Rio do Sul",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 60,
+            "news_title": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+            "news_desc": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+            "news_location": "Ramada",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 61,
+            "news_title": "Nam tristique tortor eu pede.",
+            "news_desc": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+            "news_location": "Gonzalo Pizarro",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 62,
+            "news_title": "In sagittis dui vel nisl.",
+            "news_desc": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+            "news_location": "Bay-ang",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 63,
+            "news_title": "Aliquam sit amet diam in magna bibendum imperdiet.",
+            "news_desc": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+            "news_location": "Shazhuang",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 64,
+            "news_title": "Nunc rhoncus dui vel sem.",
+            "news_desc": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+            "news_location": "Xiongshan",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 65,
+            "news_title": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
+            "news_desc": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+            "news_location": "La Troncal",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 66,
+            "news_title": "Etiam pretium iaculis justo.",
+            "news_desc": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+            "news_location": "Skotoússa",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 67,
+            "news_title": "Aliquam erat volutpat.",
+            "news_desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+            "news_location": "La Rochelle",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 68,
+            "news_title": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
+            "news_desc": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+            "news_location": "Turtas",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 69,
+            "news_title": "Donec semper sapien a libero.",
+            "news_desc": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+            "news_location": "Dandian",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 70,
+            "news_title": "Proin at turpis a pede posuere nonummy.",
+            "news_desc": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+            "news_location": "Duraykīsh",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 71,
+            "news_title": "In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+            "news_desc": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+            "news_location": "Minle",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 72,
+            "news_title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "news_desc": "Fusce consequat. Nulla nisl. Nunc nisl.",
+            "news_location": "Araal",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 73,
+            "news_title": "Suspendisse ornare consequat lectus.",
+            "news_desc": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+            "news_location": "Babao",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 74,
+            "news_title": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+            "news_desc": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+            "news_location": "Kokas",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 75,
+            "news_title": "Praesent lectus.",
+            "news_desc": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+            "news_location": "Safonovo",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 76,
+            "news_title": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+            "news_desc": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+            "news_location": "Jenang Selatan",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 77,
+            "news_title": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
+            "news_desc": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+            "news_location": "Sabaneta",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 78,
+            "news_title": "Aenean fermentum.",
+            "news_desc": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+            "news_location": "Liulimiao",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 79,
+            "news_title": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",
+            "news_desc": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+            "news_location": "Targuist",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 80,
+            "news_title": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+            "news_desc": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+            "news_location": "Hägersten",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 81,
+            "news_title": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+            "news_desc": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+            "news_location": "Tanjung Palas",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 82,
+            "news_title": "Nullam porttitor lacus at turpis.",
+            "news_desc": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+            "news_location": "Girsereng",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 83,
+            "news_title": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
+            "news_desc": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+            "news_location": "Obala",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 84,
+            "news_title": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo.",
+            "news_desc": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+            "news_location": "Paris 19",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 85,
+            "news_title": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "news_desc": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+            "news_location": "Kiyawa",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 86,
+            "news_title": "Donec ut dolor.",
+            "news_desc": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+            "news_location": "Al Balyanā",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 87,
+            "news_title": "Proin risus.",
+            "news_desc": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+            "news_location": "Garoua",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 88,
+            "news_title": "Pellentesque ultrices mattis odio.",
+            "news_desc": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+            "news_location": "Lapa",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 89,
+            "news_title": "Praesent lectus.",
+            "news_desc": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+            "news_location": "Jiangjing",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 90,
+            "news_title": "Maecenas ut massa quis augue luctus tincidunt.",
+            "news_desc": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+            "news_location": "Leiling",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 91,
+            "news_title": "Vivamus vestibulum sagittis sapien.",
+            "news_desc": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+            "news_location": "Orsk",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 92,
+            "news_title": "Vivamus vestibulum sagittis sapien.",
+            "news_desc": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+            "news_location": "Almelo",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 93,
+            "news_title": "Suspendisse accumsan tortor quis turpis.",
+            "news_desc": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+            "news_location": "Stenungsund",
+            "news_image": "http://dummyimage.com/350x150.png/5fa2dd/ffffff"
+        },
+        {
+            "id": 94,
+            "news_title": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
+            "news_desc": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+            "news_location": "Tamansari",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 95,
+            "news_title": "Nunc nisl.",
+            "news_desc": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+            "news_location": "Pljevlja",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        },
+        {
+            "id": 96,
+            "news_title": "Morbi ut odio.",
+            "news_desc": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+            "news_location": "Wonocolo",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 97,
+            "news_title": "Nunc nisl.",
+            "news_desc": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+            "news_location": "Ngetkib",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 98,
+            "news_title": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
+            "news_desc": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+            "news_location": "Curitibanos",
+            "news_image": "http://dummyimage.com/350x150.png/dddddd/000000"
+        },
+        {
+            "id": 99,
+            "news_title": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+            "news_desc": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+            "news_location": "Pidigan",
+            "news_image": "http://dummyimage.com/350x150.png/ff4444/ffffff"
+        },
+        {
+            "id": 100,
+            "news_title": "Vivamus tortor.",
+            "news_desc": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+            "news_location": "Astanajapura",
+            "news_image": "http://dummyimage.com/350x150.png/cc0000/ffffff"
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+html {
+  height: 100% !important;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative !important;
+  margin: 0 !important;
+  padding-bottom: 6rem !important;
+  min-height: 100% !important;
+}
+
+.topnav > .nav-item > a{
+  color:whitesmoke !important;
+}
+
+.footer> .col-md-4{
+  border-right: 1px solid whitesmoke;
+  padding: 1em;
+}
+.leftmenu{
+  border-right: 1px solid rgb(123, 123, 123) !important;
+}
+
+.footer {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  padding: 2rem !important;
+  text-align: center !important;
+}

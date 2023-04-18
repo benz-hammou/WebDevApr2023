@@ -1,0 +1,17 @@
+.navbar .container{
+    padding-inline: 15em;
+    height: 8.3vh;
+}
+
+.navbar-brand:hover  {
+    transform: scale(1.4);
+    transition: transform 2s;
+    font-weight: bold;
+    color: tomato !important
+}
+#foot{
+    height: 10vh;
+}
+#col-9{
+    height: 80vh;
+}

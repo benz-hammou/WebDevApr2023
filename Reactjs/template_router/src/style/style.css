@@ -1,0 +1,34 @@
+.navbar-brand, .nav-link{
+    color:white !important;
+    font-weight: 400;
+    font-size: 20px !important
+}
+
+.navbar{
+    height: 6vh;
+}
+
+.active{
+    background-color: green !important;
+}
+
+.active a{
+    color: aliceblue !important;
+}
+
+a{
+    text-decoration: none;
+}
+
+.footer{
+    height: 9vh;
+}
+
+.dropdown-menu{
+    background-color: #198754 !important;
+    border: none !important;
+}
+
+.dropdown-menu a{
+    color: aliceblue !important;
+}

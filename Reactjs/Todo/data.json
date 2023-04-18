@@ -1,0 +1,30 @@
+{
+  "todos": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "todo": "febdrgbdr",
+      "id": 3
+    },
+    {
+      "todo": "react.js",
+      "id": 4
+    },
+    {
+      "todo": "Python Django Dude",
+      "id": 5
+    },
+    {
+      "todo": "htjuytjr",
+      "id": 6
+    },
+    {
+      "todo": "segterh",
+      "id": 7
+    }
+  ]
+}
