@@ -4,13 +4,18 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Col, Row } from "react-bootstrap";
 
-const AddEmployee = () => {
+const AddEmployee = ({  }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <>
+
+
+
+
+
       <Button variant="primary" onClick={handleShow}>
         Launch demo modal
       </Button>
