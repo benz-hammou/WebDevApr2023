@@ -13,7 +13,6 @@ const AddTodo = ({ todoState, inputState }) => {
                 todo: inputState.input
             }
         ])
-
         fetch('http://localhost:3001/todos', {
             method: 'POST',
             headers: {

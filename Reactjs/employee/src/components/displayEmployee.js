@@ -1,41 +1,72 @@
-const DisplayEmployee = ({ tableData }) => {
-  /* const obj = {
-    id:idValue++,
-        fullname:fullNameInput.value,
-        profession:professionInput.value,
-        gender:genderInput.value,
-        nationality:nationalityInput.value,
-        address:adressInput.value,
-        city:cityInput.value,
-        phone:phoneInput.value,
-        email:emailInput.value
-} */
+import { useState } from "react";
+import AddEmployee from "./addEmployee";
+import Header from "./header";
 
-  <table className="table">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Profile</th>
-      </tr>
-    </thead>
-    <tbody>
-      {tableData.map((data, index) => {
-        return (
-          <tr key={index}>
-            <td>{index + 1}</td>
-            <td>{data.name}</td>
-            <td>{data.email}</td>
-            <td>{data.profile}</td>
-          </tr>
-        );
-      })}
-    </tbody>
-  </table>;
+
+const DisplayEmployee = ({ tableData, setTableData }) => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [formObject, setFormObject] = useState({
+    fullname: "",
+    profession: "",
+    gender: "",
+    nationality: "",
+    address: "",
+    city: "",
+    phone: "",
+    email: "",
+  });
+
+  const onValChange = (e) => {
+    setFormObject({
+      ...formObject,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const isObjectEmpty = (objectName) => {
+    for (let prop in objectName) {
+      if(objectName[prop]===""){
+        return true
+      }
+    }
+    return false;
+  };
+
+  const onFormSubmit = (e) => {
+    e.preventDefault()
+    let verifyOBject = isObjectEmpty(formObject)
+    console.log(verifyOBject)
+    // const chekValue = Object.values(formObject).every((res) => res.length===0);
+    if (!verifyOBject) {
+        setTableData((prevState) => {
+            return {
+              ...prevState,
+              formObject,
+            };
+          });
+          setTableData([...tableData, formObject]);
+          setFormObject({
+            fullname: "",
+            profession: "",
+            gender: "",
+            nationality: "",
+            address: "",
+            city: "",
+            phone: "",
+            email: "",
+          });
+          handleClose();
+    } else {
+      alert("please complete all inputs entries !");
+    }
+  };
 
   return (
     <div>
+      <Header />
       <div className="employee-list">
         <table className="table table-dark">
           <thead className="table-light">
@@ -46,39 +77,49 @@ const DisplayEmployee = ({ tableData }) => {
               <th scope="col">Gender</th>
               <th scope="col">Nationality</th>
               <th scope="col">Address</th>
+              <th scope="col">City</th>
               <th scope="col">Phone</th>
               <th scope="col">Email</th>
             </tr>
           </thead>
+          {console.log(tableData)}
           <tbody className="result">
             {tableData.map((data, index) => {
-                const [fullName,profession] = data
+              const {
+                fullname,
+                profession,
+                gender,
+                nationality,
+                address,
+                city,
+                phone,
+                email,
+              } = data;
               return (
                 <tr key={index}>
-                  <td>{index++}</td>
-                  <td>{fullName}</td>
+                  <td>{index + 1}</td>
+                  <td>{fullname}</td>
                   <td>{profession}</td>
-                  <td>Male</td>
-                  <td>Belgian</td>
-                  <td>Street 1, 1000 Brussels</td>
-                  <td>0123456789</td>
-                  <td>john@doe.com</td>
+                  <td>{gender}</td>
+                  <td>{nationality}</td>
+                  <td>{address}</td>
+                  <td>{city}</td>
+                  <td>{phone}</td>
+                  <td>{email}</td>
                 </tr>
               );
             })}
-            <tr>
-              <td>1</td>
-              <td>John Doe</td>
-              <td>Developer</td>
-              <td>Male</td>
-              <td>Belgian</td>
-              <td>Street 1, 1000 Brussels</td>
-              <td>0123456789</td>
-              <td>john@doe.com</td>
-            </tr>
           </tbody>
         </table>
       </div>
+      <AddEmployee
+        onFormSubmit={onFormSubmit}
+        onValChange={onValChange}
+        formObject={formObject}
+        handleClose={handleClose}
+        handleShow={handleShow}
+        show={show}
+      />
     </div>
   );
 };
