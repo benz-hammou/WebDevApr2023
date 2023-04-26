@@ -3,7 +3,7 @@ import AddEmployee from "./addEmployee";
 import Header from "./header";
 
 
-const DisplayEmployee = ({ tableData, setTableData }) => {
+const DisplayEmployee = ({ tableData, setTableData, toast }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -60,7 +60,7 @@ const DisplayEmployee = ({ tableData, setTableData }) => {
           });
           handleClose();
     } else {
-      alert("please complete all inputs entries !");
+      return toast
     }
   };
 
