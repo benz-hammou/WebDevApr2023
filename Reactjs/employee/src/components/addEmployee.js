@@ -13,11 +13,11 @@ const AddEmployee = ({
 }) => {
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+      <Button variant="success" onClick={handleShow}>
+        New Employee
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} size="lg" centered>
         <Modal.Header closeButton>
           <Modal.Title>Add Employee</Modal.Title>
         </Modal.Header>
@@ -27,7 +27,7 @@ const AddEmployee = ({
             <Form.Group className="mb-6">
               <Row>
                 <Col md={6}>
-                  <label for="inputEmail4" className="form-label">
+                  <label htmlFor="inputEmail4" className="form-label">
                     Fullname
                   </label>
                   <input
@@ -35,14 +35,14 @@ const AddEmployee = ({
                     className="form-control"
                     placeholder="Fullname"
                     onChange={onValChange}
-                    value={formObject.fullname}
+                    defaultValue={formObject.fullname}
                     name="fullname"
                     id="FullName"
                   />
                 </Col>
 
                 <Col md={6}>
-                  <label for="inputPassword4" className="form-label">
+                  <label htmlFor="inputPassword4" className="form-label">
                     Profession
                   </label>
                   <input
@@ -50,31 +50,31 @@ const AddEmployee = ({
                     className="form-control"
                     placeholder="Profession"
                     onChange={onValChange}
-                    value={formObject.profession}
+                    defaultValue={formObject.profession}
                     name="profession"
                     id="Profession"
                   />
                 </Col>
 
                 <Col md={6}>
-                  <label for="inputState" className="form-label">
+                  <label htmlFor="inputState" className="form-label">
                     Gender
                   </label>
                   <select
                     onChange={onValChange}
-                    value={formObject.gender}
+                    defaultValue={formObject.gender}
                     name="gender"
                     id="Gender"
                     className="form-select"
                   >
                     <option selected>Select you gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option defaultValue="Male">Male</option>
+                    <option defaultValue="Female">Female</option>
                   </select>
                 </Col>
 
                 <Col md={6}>
-                  <label for="inputAddress2" className="form-label">
+                  <label htmlFor="inputAddress2" className="form-label">
                     Nationality
                   </label>
                   <input
@@ -82,14 +82,14 @@ const AddEmployee = ({
                     className="form-control"
                     placeholder="Nationality"
                     onChange={onValChange}
-                    value={formObject.nationality}
+                    defaultValue={formObject.nationality}
                     name="nationality"
                     id="Nationality"
                   />
                 </Col>
 
                 <Col md={12}>
-                  <label for="inputAddress2" className="form-label">
+                  <label htmlFor="inputAddress2" className="form-label">
                     Address
                   </label>
                   <input
@@ -97,14 +97,14 @@ const AddEmployee = ({
                     className="form-control"
                     placeholder="Apartment, studio, or floor"
                     onChange={onValChange}
-                    value={formObject.address}
+                    defaultValue={formObject.address}
                     name="address"
                     id="Address"
                   />
                 </Col>
 
                 <Col md={4}>
-                  <label for="inputCity" className="form-label">
+                  <label htmlFor="inputCity" className="form-label">
                     City
                   </label>
                   <input
@@ -112,7 +112,7 @@ const AddEmployee = ({
                     className="form-control"
                     placeholder="City"
                     onChange={onValChange}
-                    value={formObject.city}
+                    defaultValue={formObject.city}
                     name="city"
                     id="City"
                   />
@@ -125,14 +125,14 @@ const AddEmployee = ({
                     className="form-control"
                     placeholder="Phone"
                     onChange={onValChange}
-                    value={formObject.phone}
+                    defaultValue={formObject.phone}
                     name="phone"
                     id="Phone"
                   />
                 </Col>
 
                 <Col md={4}>
-                  <label for="inputZip" className="form-label">
+                  <label htmlFor="inputZip" className="form-label">
                     Email
                   </label>
                   <input
@@ -140,7 +140,7 @@ const AddEmployee = ({
                     className="form-control"
                     placeholder="Email"
                     onChange={onValChange}
-                    value={formObject.email}
+                    defaultValue={formObject.email}
                     name="email"
                     id="Email"
                   />

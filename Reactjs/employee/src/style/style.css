@@ -1,3 +1,6 @@
 body {
     background: rgb(102, 101, 101) !important
 }
+.modal-dialog-centered {
+    padding-bottom: 12rem !important
+}

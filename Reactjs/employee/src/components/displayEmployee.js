@@ -1,12 +1,21 @@
 import { useState } from "react";
 import AddEmployee from "./addEmployee";
 import Header from "./header";
+import SearchEmployee from "./searchEmployee";
 
-
-const DisplayEmployee = ({ tableData, setTableData, toast }) => {
+const DisplayEmployee = ({
+  tableData,
+  setTableData,
+  errorToast,
+  successToast,
+}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [searchShow, setSearchShow] = useState(false);
+  const searchHandleClose = () => setSearchShow(false);
+  const searchHandleShow = () => setSearchShow(true);
+  const [searchResult, setSearchResult] = useState([]);
 
   const [formObject, setFormObject] = useState({
     fullname: "",
@@ -28,45 +37,66 @@ const DisplayEmployee = ({ tableData, setTableData, toast }) => {
 
   const isObjectEmpty = (objectName) => {
     for (let prop in objectName) {
-      if(objectName[prop]===""){
-        return true
+      if (objectName[prop] === "") {
+        return true;
       }
     }
     return false;
   };
 
   const onFormSubmit = (e) => {
-    e.preventDefault()
-    let verifyOBject = isObjectEmpty(formObject)
-    console.log(verifyOBject)
+    e.preventDefault();
+    let verifyOBject = isObjectEmpty(formObject);
+
+    // console.log(verifyOBject)
     // const chekValue = Object.values(formObject).every((res) => res.length===0);
+
     if (!verifyOBject) {
-        setTableData((prevState) => {
-            return {
-              ...prevState,
-              formObject,
-            };
-          });
-          setTableData([...tableData, formObject]);
-          setFormObject({
-            fullname: "",
-            profession: "",
-            gender: "",
-            nationality: "",
-            address: "",
-            city: "",
-            phone: "",
-            email: "",
-          });
-          handleClose();
+      setTableData((prevState) => {
+        return {
+          ...prevState,
+          formObject,
+        };
+      });
+      setTableData([...tableData, formObject]);
+      setFormObject({
+        fullname: "",
+        profession: "",
+        gender: "",
+        nationality: "",
+        address: "",
+        city: "",
+        phone: "",
+        email: "",
+      });
+      handleClose();
+      successToast();
     } else {
-      return toast
+      errorToast();
     }
   };
 
   return (
     <div>
       <Header />
+      <AddEmployee
+        onFormSubmit={onFormSubmit}
+        onValChange={onValChange}
+        formObject={formObject}
+        handleClose={handleClose}
+        handleShow={handleShow}
+        show={show}
+      />
+      <SearchEmployee
+        searchShow={searchShow}
+        setTableData={setTableData}
+        tableData={tableData}
+        setSearchShow={setSearchShow}
+        searchHandleShow={searchHandleShow}
+        searchHandleClose={searchHandleClose}
+        searchResult={searchResult}
+        setSearchResult={setSearchResult}
+      />
       <div className="employee-list">
         <table className="table table-dark">
           <thead className="table-light">
@@ -82,44 +112,62 @@ const DisplayEmployee = ({ tableData, setTableData, toast }) => {
               <th scope="col">Email</th>
             </tr>
           </thead>
-          {console.log(tableData)}
+          {console.log(searchResult)}
           <tbody className="result">
-            {tableData.map((data, index) => {
-              const {
-                fullname,
-                profession,
-                gender,
-                nationality,
-                address,
-                city,
-                phone,
-                email,
-              } = data;
-              return (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{fullname}</td>
-                  <td>{profession}</td>
-                  <td>{gender}</td>
-                  <td>{nationality}</td>
-                  <td>{address}</td>
-                  <td>{city}</td>
-                  <td>{phone}</td>
-                  <td>{email}</td>
-                </tr>
-              );
-            })}
+            {searchResult.length > 0
+              ? searchResult.map((data, index) => {
+                  const {
+                    fullname,
+                    profession,
+                    gender,
+                    nationality,
+                    address,
+                    city,
+                    phone,
+                    email,
+                  } = data;
+                  return (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{fullname}</td>
+                      <td>{profession}</td>
+                      <td>{gender}</td>
+                      <td>{nationality}</td>
+                      <td>{address}</td>
+                      <td>{city}</td>
+                      <td>{phone}</td>
+                      <td>{email}</td>
+                    </tr>
+                  );
+                })
+              : tableData.map((data, index) => {
+                  const {
+                    fullname,
+                    profession,
+                    gender,
+                    nationality,
+                    address,
+                    city,
+                    phone,
+                    email,
+                  } = data;
+                  return (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td>{fullname}</td>
+                      <td>{profession}</td>
+                      <td>{gender}</td>
+                      <td>{nationality}</td>
+                      <td>{address}</td>
+                      <td>{city}</td>
+                      <td>{phone}</td>
+                      <td>{email}</td>
+                    </tr>
+                  );
+                })}
           </tbody>
         </table>
       </div>
-      <AddEmployee
-        onFormSubmit={onFormSubmit}
-        onValChange={onValChange}
-        formObject={formObject}
-        handleClose={handleClose}
-        handleShow={handleShow}
-        show={show}
-      />
     </div>
   );
 };

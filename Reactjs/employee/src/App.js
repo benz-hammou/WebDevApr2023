@@ -3,20 +3,28 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
 import DisplayEmployee from "./components/displayEmployee";
 import SearchEmployee from "./components/searchEmployee";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const [tableData, setTableData] = useState([]);
- const Notify = () => {
-    toast("default notification !", {
-        position: toast.POSITION.TOP_CENTER
-    })
- }
+
+  const errorToast = () => {
+    toast.error("Please complete all the inputs !", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  }
+
+  const successToast = () => {
+     toast.success("New employer added !", {
+      position: toast.POSITION.TOP_LEFT,
+    });
+  }
+
   return (
     <BrowserRouter>
       <Container>
-    <ToastContainer/>
+        <ToastContainer />
         <Row>
           <Routes>
             <Route
@@ -25,11 +33,12 @@ const App = () => {
                 <DisplayEmployee
                   tableData={tableData}
                   setTableData={setTableData}
-                  toast={Notify()}
+                  errorToast={errorToast}
+                  successToast={successToast}
                 />
               }
             />
-            <Route path="/search" element={<SearchEmployee />} />
+        
           </Routes>
         </Row>
       </Container>

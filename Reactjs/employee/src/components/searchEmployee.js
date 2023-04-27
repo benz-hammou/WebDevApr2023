@@ -1,74 +1,51 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Modal from 'react-bootstrap/Modal';
 
-function SearchEmployee() {
+function SearchEmployee({searchShow, searchHandleShow, setSearchShow, searchHandleClose,tableData,searchResult, setSearchResult }) {
+
+  const handleFilter = (e) => {
+    const input = e.target.value
+    const filteredData = tableData.filter(data => data.fullname.includes(input))
+    setSearchResult(filteredData)
+    }
+
+    
   return (
-    <div>
-      <div
-        class="modal fade modal-lg"
-        id="searchEmployee"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">
-                Search Employee
-              </h5>
-              <button
-                type="button"
-                class="btn-close searchEmployee"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-9">
-                  <label for="inputCity" class="form-label">
-                    Search by Column
-                  </label>
-                  <input type="text" class="form-control" id="inputCity" />
-                </div>
-                <div class="col-3">
-                  <label for="inputState" class="form-label">
-                    Select Column
-                  </label>
-                  <select id="inputState" class="form-select">
-                    <option selected>Fullname</option>
-                    <option>Profession</option>
-                    <option>Gender</option>
-                    <option>Birthdate</option>
-                    <option>Nationality</option>
-                    <option>Address</option>
-                    <option>Phone</option>
-                    <option>Email</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-danger"
-                data-bs-dismiss="modal"
-              >
-                Search
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a
-        href="#"
-        className="btn btn-dark"
-        data-bs-toggle="modal"
-        data-bs-target="#searchEmployee"
-      >
-        Search Employee
-      </a>
-    </div>
+    <>
+        <Button variant="primary" onClick={searchHandleShow}>
+        Launch demo modal
+      </Button>
+
+      <Modal show={searchShow} onHide={searchHandleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+              onChange={handleFilter}
+                type="text"
+                placeholder="tape somoine"
+                autoFocus
+              />
+            </Form.Group>
+          </Form>
+            
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={searchHandleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={searchHandleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 
