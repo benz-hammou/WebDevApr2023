@@ -154,8 +154,8 @@ const AddEmployee = ({
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={onFormSubmit}>
-            Save Changes
+          <Button variant="success" onClick={onFormSubmit}>
+            Add Employee
           </Button>
         </Modal.Footer>
       </Modal>

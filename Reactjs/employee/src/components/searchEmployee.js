@@ -1,47 +1,54 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 
-function SearchEmployee({searchShow, searchHandleShow, setSearchShow, searchHandleClose,tableData,searchResult, setSearchResult }) {
-
+function SearchEmployee({
+  searchShow,
+  searchHandleShow,
+  setSearchShow,
+  searchHandleClose,
+  tableData,
+  searchResult,
+  setSearchResult,
+}) {
   const handleFilter = (e) => {
-    const input = e.target.value
-    const filteredData = tableData.filter(data => data.fullname.includes(input))
-    setSearchResult(filteredData)
-    }
+    const input = e.target.value;
+    const filteredData = tableData.filter((data) =>
+      data.fullname.includes(input)
+    );
+    setSearchResult(filteredData);
+  };
 
-    
   return (
     <>
-        <Button variant="primary" onClick={searchHandleShow}>
-        Launch demo modal
+      <Button variant="primary" onClick={searchHandleShow}>
+      Search Employee
       </Button>
 
       <Modal show={searchShow} onHide={searchHandleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Search Employee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Employee fullname</Form.Label>
               <Form.Control
-              onChange={handleFilter}
+                onChange={handleFilter}
                 type="text"
-                placeholder="tape somoine"
+                placeholder="John Doe"
                 autoFocus
               />
             </Form.Group>
           </Form>
-            
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={searchHandleClose}>
             Close
           </Button>
           <Button variant="primary" onClick={searchHandleClose}>
-            Save Changes
+            Search
           </Button>
         </Modal.Footer>
       </Modal>
