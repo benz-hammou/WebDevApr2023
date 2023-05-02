@@ -17,7 +17,7 @@ function SearchEmployee({
     const filteredData = tableData.filter((data) =>
       data.fullname.includes(input)
     );
-    setSearchResult(filteredData);
+    setSearchResult(filteredData)
   };
 
   return (

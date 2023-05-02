@@ -11,14 +11,16 @@ const App = () => {
   const errorToast = () => {
     toast.error("Please complete all the inputs !", {
       position: toast.POSITION.TOP_CENTER,
+      autoClose: 1000,
     });
-  }
+  };
 
   const successToast = () => {
-     toast.success("New employer added !", {
+    toast.success("New employer added !", {
       position: toast.POSITION.TOP_LEFT,
+      autoClose: 1000,
     });
-  }
+  };
 
   return (
     <BrowserRouter>

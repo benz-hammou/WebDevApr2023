@@ -2,6 +2,7 @@ import { useState } from "react";
 import AddEmployee from "./addEmployee";
 import Header from "./header";
 import SearchEmployee from "./searchEmployee";
+import Button from 'react-bootstrap/Button';
 
 const DisplayEmployee = ({
   tableData,
@@ -15,9 +16,14 @@ const DisplayEmployee = ({
   const [searchShow, setSearchShow] = useState(false);
   const searchHandleClose = () => setSearchShow(false);
   const searchHandleShow = () => setSearchShow(true);
+  const [actualize, setActualize] = useState(false);
+ 
+ 
+  
   const [searchResult, setSearchResult] = useState([]);
 
   const [formObject, setFormObject] = useState({
+    id: Math.floor(Math.random()*10),
     fullname: "",
     profession: "",
     gender: "",
@@ -60,6 +66,7 @@ const DisplayEmployee = ({
       });
       setTableData([...tableData, formObject]);
       setFormObject({
+        id: Math.floor(Math.random()*10),
         fullname: "",
         profession: "",
         gender: "",
@@ -97,8 +104,11 @@ const DisplayEmployee = ({
         searchResult={searchResult}
         setSearchResult={setSearchResult}
       />
+      <Button variant="warning" onClick={setActualize(()=> true)}>Actualize Employee</Button>
+
       <div className="employee-list">
         <table className="table table-dark">
+
           <thead className="table-light">
             <tr>
               <th scope="col">ID</th>
@@ -112,11 +122,13 @@ const DisplayEmployee = ({
               <th scope="col">Email</th>
             </tr>
           </thead>
-          {console.log(searchResult)}
+        {console.log(searchResult)}
           <tbody className="result">
+
             {searchResult.length > 0
               ? searchResult.map((data, index) => {
                   const {
+                    id,
                     fullname,
                     profession,
                     gender,
@@ -127,8 +139,8 @@ const DisplayEmployee = ({
                     email,
                   } = data;
                   return (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
+                    <tr key={index ++}>
+                      <td>{id}</td>
                       <td>{fullname}</td>
                       <td>{profession}</td>
                       <td>{gender}</td>
@@ -142,6 +154,7 @@ const DisplayEmployee = ({
                 })
               : tableData.map((data, index) => {
                   const {
+                    id,
                     fullname,
                     profession,
                     gender,
@@ -152,8 +165,8 @@ const DisplayEmployee = ({
                     email,
                   } = data;
                   return (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
+                    <tr key={index ++}>
+                      <td>{id}</td>
                       <td>{fullname}</td>
                       <td>{profession}</td>
                       <td>{gender}</td>
