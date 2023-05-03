@@ -1,6 +1,9 @@
 body {
-    background: rgb(102, 101, 101) !important
+  background: rgb(102, 101, 101) !important;
 }
 .modal-dialog-centered {
-    padding-bottom: 12rem !important
+  padding-bottom: 12rem !important;
+}
+.centered th  {
+  text-align: center;
 }

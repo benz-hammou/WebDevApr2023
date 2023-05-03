@@ -2,7 +2,7 @@ import { useState } from "react";
 import AddEmployee from "./addEmployee";
 import Header from "./header";
 import SearchEmployee from "./searchEmployee";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 const DisplayEmployee = ({
   tableData,
@@ -11,19 +11,17 @@ const DisplayEmployee = ({
   successToast,
 }) => {
   const [show, setShow] = useState(false);
+  const [searchShow, setSearchShow] = useState(false);
+  const [searchResult, setSearchResult] = useState([]);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const [searchShow, setSearchShow] = useState(false);
   const searchHandleClose = () => setSearchShow(false);
   const searchHandleShow = () => setSearchShow(true);
-  const [actualize, setActualize] = useState(false);
- 
- 
-  
-  const [searchResult, setSearchResult] = useState([]);
+  const handleActualize = () => setSearchResult([]);
+
 
   const [formObject, setFormObject] = useState({
-    id: Math.floor(Math.random()*10),
+    id: crypto.randomUUID().split('-')[0].substring(0,4),
     fullname: "",
     profession: "",
     gender: "",
@@ -53,10 +51,6 @@ const DisplayEmployee = ({
   const onFormSubmit = (e) => {
     e.preventDefault();
     let verifyOBject = isObjectEmpty(formObject);
-
-    // console.log(verifyOBject)
-    // const chekValue = Object.values(formObject).every((res) => res.length===0);
-
     if (!verifyOBject) {
       setTableData((prevState) => {
         return {
@@ -64,9 +58,10 @@ const DisplayEmployee = ({
           formObject,
         };
       });
-      setTableData([...tableData, formObject]);
+      setTableData([...tableData, formObject].sort((a,b)=>a.id-b.id));
+      
       setFormObject({
-        id: Math.floor(Math.random()*10),
+        id: crypto.randomUUID().split('-')[0].substring(0,4),
         fullname: "",
         profession: "",
         gender: "",
@@ -78,6 +73,7 @@ const DisplayEmployee = ({
       });
       handleClose();
       successToast();
+    //   setTableData(tableData.sort((a, b) => a.id - b.id))
     } else {
       errorToast();
     }
@@ -104,13 +100,14 @@ const DisplayEmployee = ({
         searchResult={searchResult}
         setSearchResult={setSearchResult}
       />
-      <Button variant="warning" onClick={setActualize(()=> true)}>Actualize Employee</Button>
+      <Button variant="warning" onClick={handleActualize}>
+        Actualize Table
+      </Button>
 
       <div className="employee-list">
-        <table className="table table-dark">
-
+        <table className="table table-striped table-dark table-hover ">
           <thead className="table-light">
-            <tr>
+            <tr className="centered">
               <th scope="col">ID</th>
               <th scope="col">Fullname</th>
               <th scope="col">Profession</th>
@@ -119,12 +116,11 @@ const DisplayEmployee = ({
               <th scope="col">Address</th>
               <th scope="col">City</th>
               <th scope="col">Phone</th>
-              <th scope="col">Email</th>
+              <th  scope="col">Email</th>
             </tr>
           </thead>
-        {console.log(searchResult)}
+          {console.log(searchResult)}
           <tbody className="result">
-
             {searchResult.length > 0
               ? searchResult.map((data, index) => {
                   const {
@@ -139,7 +135,7 @@ const DisplayEmployee = ({
                     email,
                   } = data;
                   return (
-                    <tr key={index ++}>
+                    <tr key={index++}>
                       <td>{id}</td>
                       <td>{fullname}</td>
                       <td>{profession}</td>
@@ -165,7 +161,7 @@ const DisplayEmployee = ({
                     email,
                   } = data;
                   return (
-                    <tr key={index ++}>
+                    <tr key={index++}>
                       <td>{id}</td>
                       <td>{fullname}</td>
                       <td>{profession}</td>

@@ -6,10 +6,8 @@ import Modal from "react-bootstrap/Modal";
 function SearchEmployee({
   searchShow,
   searchHandleShow,
-  setSearchShow,
   searchHandleClose,
   tableData,
-  searchResult,
   setSearchResult,
 }) {
   const handleFilter = (e) => {
