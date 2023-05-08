@@ -18,7 +18,6 @@ const ModifyEmployee = ({
 
   return (
     <>
-      <Button onClick={modifyHandleShow} variant="dark">Modify Employee</Button>
 
       <Modal show={modifyShow} onHide={modifyHandleClose} size="lg" centered>
         <Modal.Header closeButton>

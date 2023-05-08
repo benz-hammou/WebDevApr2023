@@ -10,3 +10,6 @@ body {
 .centered td  {
   text-align: center;
 }
+.remove-btn {
+  background-color: red !important;
+}

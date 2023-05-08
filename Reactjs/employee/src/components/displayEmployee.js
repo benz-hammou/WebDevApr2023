@@ -1,31 +1,29 @@
-import { useState } from "react";
-import AddEmployee from "./addEmployee";
+import { useEffect, useState } from "react";
 import Header from "./header";
-import SearchEmployee from "./searchEmployee";
 import Button from "react-bootstrap/Button";
-import RemoveEmployee from "./removeEmployee";
-import ModifyEmployee from "./modifyEmployee";
+import { successToast } from "./toast";
+import CustomModal from "./Modal";
 
-const DisplayEmployee = ({
-  tableData,
-  setTableData,
-  errorToast,
-  successToast,
-}) => {
-  const [show, setShow] = useState(false);
-  const [searchShow, setSearchShow] = useState(false);
-  const [modifyShow, setModifyShow] = useState(false);
+const DisplayEmployee = () => {
+  const getSavedTable = () => {
+    const savedTable = JSON.parse(localStorage.getItem("saved_table"));
+    return savedTable ? savedTable : [];
+  };
+
+  const [employees, setEmployees] = useState(getSavedTable());
+  const [showModal, setShowModal] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const searchHandleClose = () => setSearchShow(false);
-  const modifyHandleClose = () => setModifyShow(false);
-  const searchHandleShow = () => setSearchShow(true);
-  const modifyHandleShow = () => setModifyShow(true);
-  const handleActualize = () => setSearchResult([]);
+  const [modalType, setModalType] = useState(null);
+  const [employeeToDelete, setEmployeeToDelete] = useState(null);
+  const handleClose = () => setShowModal(false);
 
-  const [formObject, setFormObject] = useState({
-    id: crypto.randomUUID().split("-")[0].substring(0, 4),
+  const handleShow = (type) => {
+    setShowModal(true);
+    setModalType(type);
+  };
+  const clearSearchResult = () => setSearchResult([]);
+
+  const [employee, setEmployee] = useState({
     fullname: "",
     profession: "",
     gender: "",
@@ -36,107 +34,92 @@ const DisplayEmployee = ({
     email: "",
   });
 
+  const saveLocalStorage = () => {
+    localStorage.setItem("saved_table", JSON.stringify(employees));
+  };
+
+  useEffect(() => {
+    saveLocalStorage();
+  }, [employees]);
+
   const onValChange = (e) => {
-    setFormObject({
-      ...formObject,
+    setEmployee({
+      ...employee,
       [e.target.name]: e.target.value,
     });
   };
 
-  const isObjectEmpty = (objectName) => {
-    for (let prop in objectName) {
-      if (objectName[prop] === "") {
-        return true;
-      }
-    }
-    return false;
-  };
-
   const onFormSubmit = (e) => {
     e.preventDefault();
-    let verifyOBject = isObjectEmpty(formObject);
-    if (!verifyOBject) {
-      setTableData((prevState) => {
-        return {
-          ...prevState,
-          formObject,
-        };
-      });
-      setTableData([...tableData, formObject].sort((a, b) => a.id - b.id));
-
-      setFormObject({
-        id: crypto.randomUUID().split("-")[0].substring(0, 4),
-        fullname: "",
-        profession: "",
-        gender: "",
-        nationality: "",
-        address: "",
-        city: "",
-        phone: "",
-        email: "",
-      });
-      handleClose();
-      successToast();
-      //   setTableData(tableData.sort((a, b) => a.id - b.id))
+    const hasToCreateEmployee = !employee.id;
+    if (hasToCreateEmployee) {
+      setEmployees([
+        ...employees,
+        { id: crypto.randomUUID().split("-")[0].substring(0, 4), ...employee },
+      ]);
     } else {
-      errorToast();
-    }
-  };
-
-  const getValueToModify = () => {
-    /*  const get_ID = (e) => {
-    }
-  modifyHandleShow() */
-  };
-
-  const handleEvent = (id) => {
-    console.log(id); // 5
-    id--
-    console.log(tableData[id])
-    let newObject = {
-        
+      const updatedEmployees = employees.map((employeeAlreadyInList) => {
+        if (employeeAlreadyInList.id === employee.id) {
+          return employee;
+        }
+        return employeeAlreadyInList;
+      });
+      setEmployees(updatedEmployees);
     }
 
+    setEmployee({
+      fullname: "",
+      profession: "",
+      gender: "",
+      nationality: "",
+      address: "",
+      city: "",
+      phone: "",
+      email: "",
+    });
+    handleClose();
+    successToast({ message: "New employer added !", autoClose: 3000 });
+    //   setEmployees(employees.sort((a, b) => a.id - b.id))
+    // errorToast({ message: "Please complete all the inputs !" });
   };
 
-//   console.log(tableData[0].id);
-  // console.log(modify.isEditing);
+  const deleteEmployee = () => {
+    const updatedEmployees = employees.filter(
+      (employee) => employee.id !== employeeToDelete.id
+    );
+    setEmployees(updatedEmployees);
+    setEmployeeToDelete(null);
+    handleClose();
+  };
+
+  //   console.log(employees[0].id);
 
   return (
     <div>
       <Header />
-      <AddEmployee
-        onFormSubmit={onFormSubmit}
-        onValChange={onValChange}
-        formObject={formObject}
-        handleClose={handleClose}
-        handleShow={handleShow}
-        show={show}
-      />
-      <SearchEmployee
-        searchShow={searchShow}
-        setTableData={setTableData}
-        tableData={tableData}
-        setSearchShow={setSearchShow}
-        searchHandleShow={searchHandleShow}
-        searchHandleClose={searchHandleClose}
-        searchResult={searchResult}
-        setSearchResult={setSearchResult}
-      />
-      <Button variant="warning" onClick={handleActualize}>
+      <Button variant="success" onClick={() => handleShow("new")}>
+        New Employee
+      </Button>
+      <Button variant="success" onClick={() => handleShow("search")}>
+        Search Employee
+      </Button>
+      <Button variant="warning" onClick={clearSearchResult}>
         Actualize Table
       </Button>
-      <ModifyEmployee
-        setTableData={setTableData}
-        tableData={tableData}
-        modifyHandleShow={modifyHandleShow}
-        modifyHandleClose={modifyHandleClose}
-        modifyShow={modifyShow}
+      <CustomModal
+        showModal={showModal}
+        handleClose={handleClose}
+        type={modalType}
+        onFormSubmit={onFormSubmit}
+        employee={employee}
+        onValChange={onValChange}
+        deleteEmployee={deleteEmployee}
+        employees={employees}
+        setSearchResult={setSearchResult}
       />
-      <RemoveEmployee setTableData={setTableData} tableData={tableData} />
 
       <div className="employee-list">
-        <table className="table table-striped table-dark table-hover ">
+        <table className="table table-dark table-hover ">
           <thead className="table-light">
             <tr className="centered">
               <th scope="col">ID</th>
@@ -179,7 +162,7 @@ const DisplayEmployee = ({
                     </tr>
                   );
                 })
-              : tableData.map((data, index) => {
+              : employees.map((data, index) => {
                   const {
                     id,
                     fullname,
@@ -193,7 +176,7 @@ const DisplayEmployee = ({
                   } = data;
                   return (
                     <tr
-                      onClick={()=>handleEvent(index)}
+                      //   onClick={()=>handleEvent(index)}
                       className="centered"
                       key={index++}
                     >
@@ -206,6 +189,27 @@ const DisplayEmployee = ({
                       <td>{city}</td>
                       <td>{phone}</td>
                       <td>{email}</td>
+                      <Button
+                        className="bg-warning"
+                        variant="warning"
+                        onClick={() => {
+                          setEmployee(data);
+                          handleShow("modify");
+                        }}
+                      >
+                        Modify Employee
+                      </Button>
+
+                      <Button
+                        className="remove-btn text-dark"
+                        variant="danger"
+                        onClick={() => {
+                          handleShow("remove");
+                          setEmployeeToDelete(data);
+                        }}
+                      >
+                        Remove Employee
+                      </Button>
                     </tr>
                   );
                 })}
