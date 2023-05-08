@@ -1,24 +1,16 @@
-import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Col, Row } from "react-bootstrap";
 
 const ModifyEmployee = ({
-  tableData,
-  setTableData,
   modifyHandleShow,
   modifyHandleClose,
   modifyShow,
 }) => {
-  /* const [modify, setModify] = useState({
-    value: tableData,
-    isEditing: false,
-  }); */
 
   return (
     <>
-
       <Modal show={modifyShow} onHide={modifyHandleClose} size="lg" centered>
         <Modal.Header closeButton>
           <Modal.Title>Modify Employee</Modal.Title>

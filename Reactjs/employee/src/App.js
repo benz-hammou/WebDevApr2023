@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
 import DisplayEmployee from "./components/displayEmployee";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 

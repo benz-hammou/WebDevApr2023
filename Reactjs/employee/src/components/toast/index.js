@@ -13,3 +13,9 @@ export const successToast = ({ message, autoClose = 1000 }) => {
     autoClose,
   });
 };
+export const modifyToast = ({ message, autoClose = 1000 }) => {
+  toast.info(message, {
+    position: toast.POSITION.TOP_LEFT,
+    autoClose,
+  });
+};

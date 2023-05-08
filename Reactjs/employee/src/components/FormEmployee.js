@@ -9,7 +9,7 @@ const EmployeeForm = ({ onValChange, employee, onFormSubmit, handleClose }) => {
     <>
       <Modal.Header closeButton>
         <Modal.Title>
-          {isEditting ? "Edit Employee" : "Add Employee a kho"}
+          {isEditting ? `Edit employee with ID: ${employee.id}`: "Add New Employee"}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -144,8 +144,8 @@ const EmployeeForm = ({ onValChange, employee, onFormSubmit, handleClose }) => {
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="success" onClick={onFormSubmit}>
-          {isEditting ? "Edit Employee" : "Add Employee a kho"}
+        <Button variant={isEditting ? "info" : "success"} onClick={onFormSubmit}>
+          {isEditting ? "Save Changes" : "Add Employee"}
         </Button>
       </Modal.Footer>
     </>

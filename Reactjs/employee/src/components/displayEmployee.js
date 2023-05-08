@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Header from "./header";
 import Button from "react-bootstrap/Button";
-import { successToast } from "./toast";
+import { successToast, errorToast, modifyToast } from "./toast";
 import CustomModal from "./Modal";
+import SearchEmployee from "./searchEmployee";
+import { Container, Row, Col } from "react-bootstrap";
 
 const DisplayEmployee = () => {
   const getSavedTable = () => {
@@ -15,8 +17,20 @@ const DisplayEmployee = () => {
   const [searchResult, setSearchResult] = useState([]);
   const [modalType, setModalType] = useState(null);
   const [employeeToDelete, setEmployeeToDelete] = useState(null);
-  const handleClose = () => setShowModal(false);
 
+  const handleClose = () => {
+    setShowModal(false);
+    setEmployee({
+      fullname: "",
+      profession: "",
+      gender: "",
+      nationality: "",
+      address: "",
+      city: "",
+      phone: "",
+      email: "",
+    });
+  };
   const handleShow = (type) => {
     setShowModal(true);
     setModalType(type);
@@ -47,16 +61,52 @@ const DisplayEmployee = () => {
       ...employee,
       [e.target.name]: e.target.value,
     });
+    console.log("valChange");
+  };
+
+  const isInputFormEmpty = (inputForm) => {
+    for (let prop in inputForm) {
+      if (inputForm[prop] === "") {
+        return true;
+      }
+    }
+    return false;
   };
 
   const onFormSubmit = (e) => {
     e.preventDefault();
     const hasToCreateEmployee = !employee.id;
+    const verifyInputFormEmpty = isInputFormEmpty(employee);
+
     if (hasToCreateEmployee) {
-      setEmployees([
-        ...employees,
-        { id: crypto.randomUUID().split("-")[0].substring(0, 4), ...employee },
-      ]);
+      if (!verifyInputFormEmpty) {
+        setEmployees([
+          ...employees,
+          {
+            id: crypto.randomUUID().split("-")[0].substring(0, 4),
+            ...employee,
+          },
+        ]);
+
+        setEmployee({
+          fullname: "",
+          profession: "",
+          gender: "",
+          nationality: "",
+          address: "",
+          city: "",
+          phone: "",
+          email: "",
+        });
+
+        handleClose();
+        successToast({ message: "New employer added !", autoClose: 3000 });
+      } else {
+        errorToast({
+          message: "Please complete all the inputs !",
+          autoClose: 3000,
+        });
+      }
     } else {
       const updatedEmployees = employees.map((employeeAlreadyInList) => {
         if (employeeAlreadyInList.id === employee.id) {
@@ -64,23 +114,21 @@ const DisplayEmployee = () => {
         }
         return employeeAlreadyInList;
       });
-      setEmployees(updatedEmployees);
+      if (!verifyInputFormEmpty) {
+        const idOfEmployee = employee.id;
+        setEmployees(updatedEmployees);
+        handleClose();
+        modifyToast({
+          message: `The employee with ID:${idOfEmployee} has been modified!`,
+          autoClose: 3000,
+        });
+      } else {
+        errorToast({
+          message: "Please complete all the inputs !",
+          autoClose: 3000,
+        });
+      }
     }
-
-    setEmployee({
-      fullname: "",
-      profession: "",
-      gender: "",
-      nationality: "",
-      address: "",
-      city: "",
-      phone: "",
-      email: "",
-    });
-    handleClose();
-    successToast({ message: "New employer added !", autoClose: 3000 });
-    //   setEmployees(employees.sort((a, b) => a.id - b.id))
-    // errorToast({ message: "Please complete all the inputs !" });
   };
 
   const deleteEmployee = () => {
@@ -92,20 +140,21 @@ const DisplayEmployee = () => {
     handleClose();
   };
 
-  //   console.log(employees[0].id);
-
   return (
     <div>
       <Header />
-      <Button variant="success" onClick={() => handleShow("new")}>
-        New Employee
-      </Button>
-      <Button variant="success" onClick={() => handleShow("search")}>
-        Search Employee
-      </Button>
-      <Button variant="warning" onClick={clearSearchResult}>
-        Actualize Table
-      </Button>
+      <div className="d-flex justify-content-between pt-5 pb-4">
+        <Button variant="success" onClick={() => handleShow("new")}>
+          New Employee
+        </Button>
+
+        <SearchEmployee
+          clearSearchResult={clearSearchResult}
+          employees={employees}
+          setSearchResult={setSearchResult}
+        />
+      </div>
+
       <CustomModal
         showModal={showModal}
         handleClose={handleClose}
@@ -149,6 +198,7 @@ const DisplayEmployee = () => {
                     email,
                   } = data;
                   return (
+                    <div>
                     <tr className="centered" key={index++}>
                       <td>{id}</td>
                       <td>{fullname}</td>
@@ -160,6 +210,28 @@ const DisplayEmployee = () => {
                       <td>{phone}</td>
                       <td>{email}</td>
                     </tr>
+                    <Button
+                        className="bg-info"
+                        variant="info"
+                        onClick={() => {
+                          setEmployee(data);
+                          handleShow("modify");
+                        }}
+                      >
+                        M
+                      </Button>
+
+                      <Button
+                        className="remove-btn text-dark"
+                        variant="danger"
+                        onClick={() => {
+                          handleShow("remove");
+                          setEmployeeToDelete(data);
+                        }}
+                      >
+                        R
+                      </Button>
+                      </div>
                   );
                 })
               : employees.map((data, index) => {
@@ -175,11 +247,7 @@ const DisplayEmployee = () => {
                     email,
                   } = data;
                   return (
-                    <tr
-                      //   onClick={()=>handleEvent(index)}
-                      className="centered"
-                      key={index++}
-                    >
+                    <tr className="centered" key={index++}>
                       <td>{id}</td>
                       <td>{fullname}</td>
                       <td>{profession}</td>
@@ -190,14 +258,14 @@ const DisplayEmployee = () => {
                       <td>{phone}</td>
                       <td>{email}</td>
                       <Button
-                        className="bg-warning"
-                        variant="warning"
+                        className="bg-info"
+                        variant="info"
                         onClick={() => {
                           setEmployee(data);
                           handleShow("modify");
                         }}
                       >
-                        Modify Employee
+                        M
                       </Button>
 
                       <Button
@@ -208,7 +276,7 @@ const DisplayEmployee = () => {
                           setEmployeeToDelete(data);
                         }}
                       >
-                        Remove Employee
+                        R
                       </Button>
                     </tr>
                   );

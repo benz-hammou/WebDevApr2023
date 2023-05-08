@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
+import InputGroup from "react-bootstrap/InputGroup";
 
-function SearchEmployee({ handleClose, employees, setSearchResult }) {
+function SearchEmployee({ employees, setSearchResult, clearSearchResult }) {
   const handleFilter = (e) => {
     const input = e.target.value;
     const filteredData = employees.filter((employee) =>
@@ -13,29 +13,21 @@ function SearchEmployee({ handleClose, employees, setSearchResult }) {
   };
 
   return (
-    <>
-      <Modal.Header closeButton>
-        <Modal.Title>Search Employee</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Form>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-            <Form.Label>Employee fullname</Form.Label>
-            <Form.Control
-              onChange={handleFilter}
-              type="text"
-              placeholder="John Doe"
-              autoFocus
-            />
-          </Form.Group>
-        </Form>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Close
+  
+      <InputGroup className="w-50" >
+        <Form.Control
+          placeholder="Search Employee by Fullname"
+          aria-describedby="basic-addon2"
+          onChange={handleFilter}
+          type="text"
+          
+          autoFocus
+        />
+        <Button className="bg-warning" variant="outline-dark" id="button-addon2" onClick={clearSearchResult}>
+          X
         </Button>
-      </Modal.Footer>
-    </>
+      </InputGroup>
+  
   );
 }
 
