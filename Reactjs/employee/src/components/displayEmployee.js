@@ -4,7 +4,8 @@ import Button from "react-bootstrap/Button";
 import { successToast, errorToast, modifyToast } from "./toast";
 import CustomModal from "./Modal";
 import SearchEmployee from "./searchEmployee";
-import { Container, Row, Col } from "react-bootstrap";
+// import { Container, Row, Col } from "react-bootstrap";
+import { RiDeleteBinFill, RiEdit2Fill } from "react-icons/ri";
 
 const DisplayEmployee = () => {
   const getSavedTable = () => {
@@ -143,8 +144,12 @@ const DisplayEmployee = () => {
   return (
     <div>
       <Header />
-      <div className="d-flex justify-content-between pt-5 pb-4">
-        <Button variant="success" onClick={() => handleShow("new")}>
+      <div className="d-flex justify-content-between mt-5 mb-5 ">
+        <Button
+          className="w-25 fw-semibold add_btn"
+          variant="success"
+          onClick={() => handleShow("new")}
+        >
           New Employee
         </Button>
 
@@ -180,6 +185,9 @@ const DisplayEmployee = () => {
               <th scope="col">City</th>
               <th scope="col">Phone</th>
               <th scope="col">Email</th>
+              <th className="bg-dark text-light" scope="col">
+                Actions
+              </th>
             </tr>
           </thead>
           {console.log(searchResult)}
@@ -198,8 +206,7 @@ const DisplayEmployee = () => {
                     email,
                   } = data;
                   return (
-                    <div>
-                    <tr className="centered" key={index++}>
+                    <tr className="centered p-0" key={index++}>
                       <td>{id}</td>
                       <td>{fullname}</td>
                       <td>{profession}</td>
@@ -209,29 +216,29 @@ const DisplayEmployee = () => {
                       <td>{city}</td>
                       <td>{phone}</td>
                       <td>{email}</td>
+                      <td className="p-0 m-0">
+                        <Button
+                          className="bg-info w-50 rounded-0"
+                          variant="info"
+                          onClick={() => {
+                            setEmployee(data);
+                            handleShow("modify");
+                          }}
+                        >
+                          <RiEdit2Fill />
+                        </Button>
+                        <Button
+                          className="bg-danger w-50 rounded-0 "
+                          variant="danger"
+                          onClick={() => {
+                            handleShow("remove");
+                            setEmployeeToDelete(data);
+                          }}
+                        >
+                          <RiDeleteBinFill className="text-dark" />
+                        </Button>
+                      </td>
                     </tr>
-                    <Button
-                        className="bg-info"
-                        variant="info"
-                        onClick={() => {
-                          setEmployee(data);
-                          handleShow("modify");
-                        }}
-                      >
-                        M
-                      </Button>
-
-                      <Button
-                        className="remove-btn text-dark"
-                        variant="danger"
-                        onClick={() => {
-                          handleShow("remove");
-                          setEmployeeToDelete(data);
-                        }}
-                      >
-                        R
-                      </Button>
-                      </div>
                   );
                 })
               : employees.map((data, index) => {
@@ -247,7 +254,7 @@ const DisplayEmployee = () => {
                     email,
                   } = data;
                   return (
-                    <tr className="centered" key={index++}>
+                    <tr className="centered p-0" key={index++}>
                       <td>{id}</td>
                       <td>{fullname}</td>
                       <td>{profession}</td>
@@ -257,27 +264,28 @@ const DisplayEmployee = () => {
                       <td>{city}</td>
                       <td>{phone}</td>
                       <td>{email}</td>
-                      <Button
-                        className="bg-info"
-                        variant="info"
-                        onClick={() => {
-                          setEmployee(data);
-                          handleShow("modify");
-                        }}
-                      >
-                        M
-                      </Button>
-
-                      <Button
-                        className="remove-btn text-dark"
-                        variant="danger"
-                        onClick={() => {
-                          handleShow("remove");
-                          setEmployeeToDelete(data);
-                        }}
-                      >
-                        R
-                      </Button>
+                      <td className="p-0 m-0">
+                        <Button
+                          className="bg-info w-50 rounded-0"
+                          variant="info"
+                          onClick={() => {
+                            setEmployee(data);
+                            handleShow("modify");
+                          }}
+                        >
+                          <RiEdit2Fill />
+                        </Button>
+                        <Button
+                          className="bg-danger w-50 rounded-0 "
+                          variant="danger"
+                          onClick={() => {
+                            handleShow("remove");
+                            setEmployeeToDelete(data);
+                          }}
+                        >
+                          <RiDeleteBinFill className="text-dark" />
+                        </Button>
+                      </td>
                     </tr>
                   );
                 })}

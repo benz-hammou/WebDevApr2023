@@ -13,3 +13,23 @@ body {
 .remove-btn {
   background-color: red !important;
 }
+.btn_clear {
+  width: 5rem;
+}
+button:hover svg {
+  transform: scale(1.5);
+  color: white !important;
+  transition: 0.4s ease-in-out
+}
+.search_btn {
+  height: 3rem !important;
+}
+.add_btn {
+  height: 3rem !important;
+}
+h1 {
+  margin-bottom: 7rem !important;
+}
+.modal-footer {
+  justify-content: space-around !important;
+}

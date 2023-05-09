@@ -1,16 +1,15 @@
-import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 
 const RemoveEmployee = ({ handleClose, deleteEmployee }) => {
   return (
     <>
-      t'est sur ?
       <Modal.Footer>
+      <Modal.Title>Employee with ID: 67 will be deleted, are you sure ?</Modal.Title>
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
-        <Button variant="success" onClick={deleteEmployee}>
+        <Button variant="danger" onClick={deleteEmployee}>
           Confirm
         </Button>
       </Modal.Footer>
