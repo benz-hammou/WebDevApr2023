@@ -15,9 +15,9 @@ const DisplayEmployee = () => {
 
   const [employees, setEmployees] = useState(getSavedTable());
   const [showModal, setShowModal] = useState(false);
-  const [searchResult, setSearchResult] = useState([]);
   const [modalType, setModalType] = useState(null);
   const [employeeToDelete, setEmployeeToDelete] = useState(null);
+  const [searchText, setSearchText] = useState("")
 
   const handleClose = () => {
     setShowModal(false);
@@ -36,7 +36,7 @@ const DisplayEmployee = () => {
     setShowModal(true);
     setModalType(type);
   };
-  const clearSearchResult = () => setSearchResult([]);
+  const clearSearchResult = () => setSearchText("")
 
   const [employee, setEmployee] = useState({
     fullname: "",
@@ -141,6 +141,10 @@ const DisplayEmployee = () => {
     handleClose();
   };
 
+  const filteredData = employees.filter((employee) =>
+      employee.fullname.toLowerCase().includes(searchText.toLowerCase())
+    );
+
   return (
     <div>
       <Header />
@@ -155,8 +159,8 @@ const DisplayEmployee = () => {
 
         <SearchEmployee
           clearSearchResult={clearSearchResult}
-          employees={employees}
-          setSearchResult={setSearchResult}
+          setSearchText={setSearchText}
+          searchText={searchText}
         />
       </div>
 
@@ -168,8 +172,6 @@ const DisplayEmployee = () => {
         employee={employee}
         onValChange={onValChange}
         deleteEmployee={deleteEmployee}
-        employees={employees}
-        setSearchResult={setSearchResult}
       />
 
       <div className="employee-list">
@@ -190,10 +192,8 @@ const DisplayEmployee = () => {
               </th>
             </tr>
           </thead>
-          {console.log(searchResult)}
           <tbody className="result">
-            {searchResult.length > 0
-              ? searchResult.map((data, index) => {
+            {searchText ? filteredData.map((data, index) => {
                   const {
                     id,
                     fullname,

@@ -140,7 +140,7 @@ const EmployeeForm = ({ onValChange, employee, onFormSubmit, handleClose }) => {
         </Form>
       </Modal.Body>
 
-      <Modal.Footer>
+      <Modal.Footer className="d-flex justify-content-end">
         <Button variant="secondary" onClick={handleClose}>
           Close
         </Button>
