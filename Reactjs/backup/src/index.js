@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './style/style.css'
+import './style/globals.sass'
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './style/style.css'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
