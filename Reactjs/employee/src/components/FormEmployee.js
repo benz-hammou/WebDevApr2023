@@ -111,7 +111,7 @@ const EmployeeForm = ({ onValChange, employee, onFormSubmit, handleClose }) => {
               <Col md={4}>
                 <label className="form-label">Phone</label>
                 <input
-                  type="number"
+                  type="text"
                   className="form-control"
                   placeholder="Phone"
                   onChange={onValChange}

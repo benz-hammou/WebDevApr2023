@@ -36,7 +36,6 @@ export default function CustomModal({
         return null;
     }
   };
-
   return (
     <Modal show={showModal} onHide={handleClose} size="lg" centered>
       {renderModalContent()}

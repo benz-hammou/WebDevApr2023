@@ -19,3 +19,10 @@ export const modifyToast = ({ message, autoClose = 1000 }) => {
     autoClose,
   });
 };
+export const removeToast = ({ message, autoClose = 1000 }) => {
+  toast.error(message, {
+    position: toast.POSITION.TOP_CENTER,
+    autoClose,
+    theme: "colored",
+  });
+};

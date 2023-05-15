@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./header";
 import Button from "react-bootstrap/Button";
-import { successToast, errorToast, modifyToast } from "./toast";
+import { successToast, errorToast, modifyToast, removeToast } from "./toast";
 import CustomModal from "./Modal";
 import SearchEmployee from "./searchEmployee";
 // import { Container, Row, Col } from "react-bootstrap";
@@ -133,17 +133,23 @@ const DisplayEmployee = () => {
   };
 
   const deleteEmployee = () => {
+    
     const updatedEmployees = employees.filter(
       (employee) => employee.id !== employeeToDelete.id
     );
     setEmployees(updatedEmployees);
     setEmployeeToDelete(null);
     handleClose();
+    removeToast({
+      message: `The employee has been deleted!`,
+      autoClose: 3000,
+    });
   };
 
   const filteredData = employees.filter((employee) =>
       employee.fullname.toLowerCase().includes(searchText.toLowerCase())
     );
+
 
   return (
     <div>
@@ -172,8 +178,8 @@ const DisplayEmployee = () => {
         employee={employee}
         onValChange={onValChange}
         deleteEmployee={deleteEmployee}
+        employeeToDelete={employeeToDelete}
       />
-
       <div className="employee-list">
         <table className="table table-dark table-hover ">
           <thead className="table-light">
