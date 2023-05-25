@@ -23,7 +23,7 @@ async function MakeShortURL(){
         }
 
         shortURLText.href=ShortObj.ShortURL
-        shortURLText.innerText = `Short URL: ${ShortObj.ShortURL}`
+        shortURLText.innerText = `${ShortObj.ShortURL}`
 
         var qrcode = new QRCode("qrcode", {
            text: ShortObj.ShortURL,
