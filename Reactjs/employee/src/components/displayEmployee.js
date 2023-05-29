@@ -4,7 +4,6 @@ import Button from "react-bootstrap/Button";
 import { successToast, errorToast, modifyToast, removeToast } from "./toast";
 import CustomModal from "./Modal";
 import SearchEmployee from "./searchEmployee";
-// import { Container, Row, Col } from "react-bootstrap";
 import { RiDeleteBinFill, RiEdit2Fill } from "react-icons/ri";
 
 const DisplayEmployee = () => {
@@ -12,7 +11,6 @@ const DisplayEmployee = () => {
     const savedTable = JSON.parse(localStorage.getItem("saved_table"));
     return savedTable ? savedTable : [];
   };
-
   const [employees, setEmployees] = useState(getSavedTable());
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState(null);
@@ -133,7 +131,6 @@ const DisplayEmployee = () => {
   };
 
   const deleteEmployee = () => {
-    
     const updatedEmployees = employees.filter(
       (employee) => employee.id !== employeeToDelete.id
     );
