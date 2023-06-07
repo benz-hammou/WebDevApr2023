@@ -1,5 +1,6 @@
 var http = require("http");
 var fs = require("fs");
+
 http
   .createServer(function (req, res) {
     fs.open('myP.html', 'w', function (err, file) {
