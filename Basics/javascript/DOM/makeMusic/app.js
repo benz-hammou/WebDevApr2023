@@ -1,4 +1,3 @@
-const keys = document.querySelectorAll(".key");
 const audios = document.querySelectorAll("audio");
 
 document.addEventListener("keypress", (e) => getRightCode(e.key));
